@@ -93,7 +93,7 @@ const Login = () => {
           <form className="mt-6" action="#" method="POST">
             <div>
               <label className="block text-gray-700">Email Address</label>
-              <input aria-label='' type="email" name="" id="" placeholder="Enter Email Address" className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-darkGreen focus:ring-darkGreen focus:bg-white focus:outline-none" autofocus="" autoComplete="email" required="required" onChange={e => updateFormInput({ ...formInput, email: e.target.value })} />
+              <input aria-label='' type="email" name="" id="" placeholder="Enter Email Address" className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-darkGreen focus:ring-darkGreen focus:bg-white focus:outline-none" autoFocus="" autoComplete="email" required="required" onChange={e => updateFormInput({ ...formInput, email: e.target.value })} />
             </div>
             <div className="mt-4">
               <label className="block text-gray-700">Password</label>

@@ -20,7 +20,7 @@ export default function History() {
                 <ul className="flex flex-1 flex-col gap-y-4 pt-3 px-3">
                     {General.history.map(({ id, title, summary, location, timestamp, consumption, food, travel, tags, energy, totalFootprint }) => (
                     
-                        <div class="lg:flex shadow rounded-xl border  border-gray-300 p-3 items-center">
+                        <div key={id} class="lg:flex shadow rounded-xl border  border-gray-300 p-3 items-center">
                             <div class="bg-darkGreen rounded-xl lg:w-2/12 py-12 px-8 block h-full shadow-inner">
                                 <div class="text-center tracking-wide">
                                     <div class="text-white font-normal text-xs">Total Footprint</div>
