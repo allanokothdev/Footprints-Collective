@@ -3,16 +3,16 @@ import React, { useEffect, useContext } from 'react'
 import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
 
 const ProtectedRoute = ({ children }) => {
-    const { wallet } = useContext(AuthenticatedUserContext);
+    const { uid } = useContext(AuthenticatedUserContext);
     const router = useRouter()
 
     useEffect(() => {
-        if (!wallet) {
-            router.push('/')
+        if (!uid) {
+            router.push('/signin')
         }
-    }, [router, wallet])
+    }, [router, uid])
 
-    return <>{wallet ? children : children}</>
+    return <>{uid ? children : null}</>
 }
 
 export default ProtectedRoute

@@ -3,6 +3,8 @@ export default {
     slogan: 'Empowering Sustainable Lifestyles',
     summary: 'Be part of the Solution, not the Pollution',
 
+    Footprint: 'https://firebasestorage.googleapis.com/v0/b/footprint-collective.appspot.com/o/Branding%2Flouisa-potter-0YaUgdjZ7-Y-unsplash.jpg?alt=media&token=57742821-9e10-4a04-8204-5812ceb2604f',
+
     footprintSummary: 'Our carbon footprint calculator is your key to sustainability. Whether its your business, event, or personal lifestyle, we assess your impact across consumption, energy use, waste, and mobility habits.With just a few clicks, we calculate your carbon footprint, providing valuable insights into your environmental impact.Take the first step towards a greener future – measure, understand, and reduce your carbon footprint today.',
     PIC: 'https://firebasestorage.googleapis.com/v0/b/footprint-collective.appspot.com/o/Branding%2Flogo.png?alt=media&token=5545da2a-dfa7-4864-9ce5-18ec9086f317',
     AVATAR: 'https://firebasestorage.googleapis.com/v0/b/footprint-collective.appspot.com/o/Branding%2Fjohnwick.jpg?alt=media&token=3bbc6340-04cf-496c-9464-b0be8e2cc426',
