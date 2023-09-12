@@ -52,7 +52,7 @@ export default function CreateActivity() {
                             <div className="flex flex-col">
                                 <div className="mt-0">
                                     <div className="form">
-                                        <label htmlFor="dropzone-file" className="mx-auto cursor-pointer flex w-full max-w-lg flex-col items-center rounded-xl border-2 border-dashed border-blue-400 bg-white p-6 text-center" >
+                                        <label htmlFor="dropzone-file" className="mx-auto cursor-pointer flex w-full flex-col items-center rounded-xl border-2 border-dashed border-blue-400 bg-white p-6 text-center" >
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-darkGreen" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} >
                                                 <path strokeLinecap="round"  strokeLinejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                                             </svg>
@@ -65,7 +65,7 @@ export default function CreateActivity() {
                                             <input id="dropzone-file" type="file" className="hidden" />
                                         </label>
 
-                                        <div className="mb-3 space-y-2 w-full text-xs">
+                                        <div className="my-3 space-y-2 w-full text-xs">
                                             <label className="font-semibold text-gray-600 py-2"> Activity Title <abbr title="required">*</abbr>
                                             </label>
                                             <input
