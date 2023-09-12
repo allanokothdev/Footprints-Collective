@@ -63,7 +63,7 @@ export default function Sidebar() {
                 {sidebarItems.map(({ name, href, icon }) => (
                     <Link key={name} className="group relative aspect-square rounded-xl text-gray-400 p-2 hover:bg-gray-200" href={href}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000" className="mt-2 h-6 w-6 stroke-current mx-auto">
-                            <path stroke-linecap="round" stroke-linejoin="round" d={icon} />
+                            <path stroke-linecap="round" stroke-="round" d={icon} />
                         </svg>
                         <Tooltip>
                             {name} <span className="text-gray-400" />
