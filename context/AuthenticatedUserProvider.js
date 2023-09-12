@@ -10,7 +10,7 @@ import { useRouter } from 'next/router'
 export const AuthenticatedUserContext = createContext({});
 
 export const AuthenticatedUserProvider = ({ children }) => {
-    const [uid, setUid] = useState("allan");
+    const [uid, setUid] = useState(null);
     const [user, setUser] = useState(null);
     const router = useRouter();
 
