@@ -14,7 +14,8 @@ const PillFilter = ({ tag, onClick }) => {
     return (
         <>
             <div
-                className={isActive ? "text-white text-center no-underline inline-block cursor-pointer mx-0.5 my-1 px-5 py-2.5 rounded-2xl bg-darkGreen" : "bg-[#ddd] text-black text-center no-underline inline-block cursor-pointer mx-0.5 my-1 px-5 py-2.5 rounded-2xl"}
+                className={isActive ? "text-white text-center no-underline inline-block cursor-pointer mx-0.5 my-1 px-5 py-2.5 rounded-full bg-darkGreen" : "bg-gray-100 text-black text-center no-underline inline-block cursor-pointer mx-0.5 my-1 px-5 py-2.5 rounded-full"}
+
                 onClick={() => {
                     toggleClass();
                     onClick();
