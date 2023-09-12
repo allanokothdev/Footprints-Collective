@@ -32,21 +32,9 @@ const selectLocale = () => {
                 <div className="mt-0">
                   <div className="form">
 
-                    <div className="mb-3 space-y-2 w-full text-xs">
-                      <label className="font-semibold text-gray-600 py-2"> Enter Person/Business/Event Title <abbr title="required">*</abbr>
-                      </label>
-                      <input
-                        placeholder="Enter Title"
-                        className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-14 px-4"
-                        required="required"
-                        type="text"
-                        name="title"
-                        id="title"
-                        onChange={e => updateFormInput({ ...formInput, title: e.target.value })}
-                      />
-                      <p className="text-red text-xs hidden">
-                        Please fill out this field.
-                      </p>
+                    <div>
+                      <label className="block text-gray-700">Enter Person/Business/Event Title</label>
+                      <input aria-label='' type="text" name="title" id="title" placeholder="Enter Title" className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-darkGreen focus:ring-darkGreen focus:bg-white focus:outline-none" autofocus="" autoComplete="title" required="required" onChange={e => updateFormInput({ ...formInput, title: e.target.value })} />
                     </div>
 
                     <div className='mt-4 flex flex-row justify-between'>

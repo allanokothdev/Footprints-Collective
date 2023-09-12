@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import General from '../constants/General'
 import Link from 'next/link'
 
-import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, setPersistence, browserSessionPersistence } from 'firebase/auth';
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence } from 'firebase/auth';
 import { auth, firestore } from '../utils/firebase.js';
 import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
@@ -51,6 +51,7 @@ const Login = () => {
   const signIn = (email, password) => {
     setTimeout(async () => {
       try {
+        await setPersistence(auth, browserLocalPersistence);
         signInWithEmailAndPassword(auth, email, password)
           .then(async (userCredential) => {
             const userRef = doc(firestore, General.users, userCredential.user.uid);
