@@ -144,8 +144,25 @@ const Register = () => {
             <div className="mt-4">
               <label className="block text-gray-700">Country</label>
               <select className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-darkGreen focus:ring-darkGreen focus:bg-white focus:outline-none" required="required" name="country" id="country" onChange={e => updateFormInput({ ...formInput, country: e.target.value })}>
+                <option value="Belgium">Belgium</option>
+                <option value="Canada">Canada</option>
+                <option value="France">France</option>
+                <option value="Germany">Germany</option>
                 <option value="Kenya">Kenya</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Norway">Norway</option>
                 <option value="Rwanda">Rwanda</option>
+                <option value="Spain">Spain</option>
+                <option value="South Africa">South Africa</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="Uganda">Uganda</option>
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="United States">United States</option>
               </select>
              </div>
             <div className="mt-4">

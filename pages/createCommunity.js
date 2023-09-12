@@ -40,7 +40,7 @@ export default function CreateCommunity() {
 
         <div className='flex justify-between items-center px-3 h-16 border-b border-solid'>
           <h1 className="font-semibold text-xl">Create Community</h1>
-          <button className="inline-flex items-center w-full px-6 py-3 text-sm font-bold leading-4 text-white bg-darkGreen md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-mediumGreen focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-darkGreen" type="button">Cancel</button>
+          <button onClick={() => router.back()} className="inline-flex items-center w-full px-6 py-3 text-sm font-bold leading-4 text-white bg-darkGreen md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-mediumGreen focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-darkGreen" type="button">Cancel</button>
         </div>
 
         <div className="w-full p-10 flex items-center justify-center bg-center bg-white bg-no-repeat bg-cover">
@@ -118,21 +118,25 @@ export default function CreateCommunity() {
                     <div className="w-full flex flex-col mb-3 text-xs">
                       <label className="font-semibold text-gray-600 py-2">  Select Community Location <abbr title="required">*</abbr></label>
                       <select className="block w-full bg-white text-grey-darker border border-grey-lighter rounded-lg h-14 px-4 md:w-full " required="required" name="location" id="location" onChange={e => updateFormInput({ ...formInput, location: e.target.value })}>
-                        <option value="Addis Ababa, Ethiopia">Addis Ababa, Ethiopia</option>
-                        <option value="Dar er Salaam">Dar er Salaam, Tanzania</option>
-                        <option value="Bujumbura, Burundi">Bujumbura, Burundi</option>
-                        <option value="Eldoret, Kenya">Eldoret, Kenya</option>
-                        <option value="Entebbe, Uganda">Entebbe, Uganda</option>
-                        <option value="Gisenyi, Rwanda">Gisenyi, Rwanda</option>
-                        <option value="Kampala, Uganda">Kampala, Uganda</option>
-                        <option value="Kigali, Rwanda">Kigali, Rwanda</option>
-                        <option value="Kisumu, Kenya">Mombasa, Kenya</option>
-                        <option value="Mogadishu, Somalia">Mogadishu, Somalia</option>
-                        <option value="Mombasa, Kenya">Mombasa, Kenya</option>
-                        <option value="Nairobi, Kenya">Nairobi, Kenya</option>
-                        <option value="Nakuru, Kenya">Nakuru, Kenya</option>
-                        <option value="Nyeri, Kenya">Nyeri, Kenya</option>
-                        <option value="Thika, Kenya">Thika, Kenya</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Canada">Canada</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Rwanda">Rwanda</option>
+                        <option value="Spain">Spain</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Tanzania">Tanzania</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="United States">United States</option>
                         </select>
                       <p className="text-sm text-red-500 hidden mt-3" id="error">Please fill out this field.</p>
                     </div>

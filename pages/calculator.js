@@ -31,8 +31,7 @@ export default function Calculator() {
 
                     <div className='flex justify-between items-center py-3 border-b border-solid'>
                         <h1 className="font-semibold text-xl">{General.summary}</h1>
-                        <button className="inline-flex w-full px-6 py-3 text-sm font-bold leading-4 text-white bg-darkGreen md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-mediumGreen focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-darkGreen" type="button">Calculate your Footprint</button>
-
+                        <button onClick={() => router.push('/selectLocale')} className="inline-flex w-full px-6 py-3 text-sm font-bold leading-4 text-white bg-darkGreen md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-mediumGreen focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-darkGreen" type="button">Calculate your Footprint</button>
                     </div>
 
 
