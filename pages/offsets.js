@@ -30,7 +30,7 @@ export default function Offsets() {
                                 </div>
 
                                 <div className="mt-1 p-2">
-                                    <h2 className="text-sm line-clamp-1">{title}</h2>
+                                    <h2 className="text-sm line-clamp-1 font-bold">{title}</h2>
                                     <div className="mt-1 flex justify-between items-center">
                                         <p className="text-sm">USD {value}</p>
                                         <button className="py-1 px-3 text-white text-sm border border-darkGreen rounded-xl md:rounded-full focus:ring focus:ring-darkGreen bg-darkGreen hover:bg-mediumGreen transition ease-in-out duration-200" type="button">Purchase</button>

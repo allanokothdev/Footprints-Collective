@@ -33,11 +33,10 @@ export default function Markets() {
                                 </div>
 
                                 <div className="mt-1 p-2">
-                                    <h2 className="text-sm line-clamp-1">{title}</h2>
+                                    <h2 className="text-sm font-bold line-clamp-1">{title}</h2>
                                     <div className="mt-1 flex justify-between items-center">
                                         <p className="text-sm">{location}</p>
-                                        <button className="py-1 px-3 text-white text-sm border border-darkGreen rounded-xl md:rounded-full focus:ring focus:ring-darkGreen bg-darkGreen hover:bg-mediumGreen transition ease-in-out duration-200" type="button">Attach Report</button>
-
+                                        <button onClick={() => router.push('/attachReport')} className="py-1 px-3 text-white text-sm border border-darkGreen rounded-xl md:rounded-full focus:ring focus:ring-darkGreen bg-darkGreen hover:bg-mediumGreen transition ease-in-out duration-200" type="button">Attach Report</button>
                                     </div>
 
                                 </div>
