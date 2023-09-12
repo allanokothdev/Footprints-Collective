@@ -4,14 +4,12 @@ import Link from 'next/link'
 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, firestore } from '../utils/firebase.js';
-import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
   const [formInput, updateFormInput] = useState({ title: '', country: '', email: '', password: '', channel: '' });
-  const router = useRouter();
   const [loading, setLoading] = useState(false);
 
   const validate = () => {
@@ -62,7 +60,7 @@ const Register = () => {
 
           const user = {
             id: userCredential.user.uid,
-            title: account.title,
+            title: title,
             address: userCredential.user.uid,
             privateKey: userCredential.user.uid,
             email: email,
@@ -75,10 +73,16 @@ const Register = () => {
             last_logged_in: Date.now(),
           };
 
-          sendEmailVerification(auth.currentUser).then(() => {
-            console.log('Send Email Verifications');
-            toast.success('Check your Email to verify your account');
+          await setDoc(doc(firestore, General.users, userCredential.user.uid), user).then(function () {
+            sendEmailVerification(auth.currentUser).then(() => {
+              console.log('Send Email Verifications');
+              toast.success('Check your Email to verify your account');
+              setLoading(false);
+            });
+          }).catch((error) => {
             setLoading(false);
+            console.log("Error processing transaction:", error);
+            toast.error(error.message);
           });
 
         }).catch((error) => {
@@ -145,7 +149,7 @@ const Register = () => {
                 <option value="Twitter">Twitter</option>
               </select>
             </div>
-            <button type="submit" className="w-full block bg-darkGreen hover:bg-mediumGreen focus:bg-mediumGreen text-white font-semibold rounded-lg px-4 py-3 mt-6"  > Register </button>
+            <button disabled={loading} onClick={validate} type="submit" className="w-full block bg-darkGreen hover:bg-mediumGreen focus:bg-mediumGreen text-white font-semibold rounded-lg px-4 py-3 mt-6"  > Register </button>
           </form>
           <ToastContainer />
         </div>

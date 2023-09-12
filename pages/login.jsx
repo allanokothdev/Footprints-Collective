@@ -7,6 +7,7 @@ import { auth, firestore } from '../utils/firebase.js';
 import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { doc } from 'firebase/firestore';
 
 const Login = () => {
 
@@ -50,23 +51,26 @@ const Login = () => {
       try {
         signInWithEmailAndPassword(auth, email, password)
           .then(async (userCredential) => {
-            setLoading(false);
-            setEmail(email);
-            setPassword(password);
-            toast.success('Logged In');
-            router.push('/')
-
+            const userRef = doc(firestore, General.users, userCredential.user.uid);
+            await updateDoc(userRef, {
+              last_logged_in: Date.now(),
+            }).then(function () {
+              setLoading(false);
+              toast.success('Logged In');
+            }).catch((error) => {
+              setLoading(false);
+              toast.error(error.message);
+              console.log(error.message)
+            });
           }).catch((error) => {
             setLoading(false);
             toast.error(error.message);
             console.log(error.message)
-
           });
       } catch (error) {
         setLoading(false);
         toast.error(error.message);
         console.log('Error')
-
       }
     }, 3000);
   };
