@@ -23,7 +23,7 @@ export default function Markets() {
 
                 <div className="max-w-2xl mx-auto py-3 px-3 sm:py-3 sm:px-3 lg:max-w-7xl lg:px-3">
                     <div className="mt-1 grid grid-cols-1 gap-y-5 gap-x-5 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                        {General.nfts.map(({ id, pic, title, credit, link, value }) => (
+                        {General.activities.map(({ id, pic, title, location }) => (
                             <div key={id} className="cursor-pointer rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
                                 <div className="relative flex items-end overflow-hidden rounded-xl">
                                     <img src={pic} className="aspect-square w-full object-cover" alt=" " />
@@ -35,8 +35,8 @@ export default function Markets() {
                                 <div className="mt-1 p-2">
                                     <h2 className="text-sm line-clamp-1">{title}</h2>
                                     <div className="mt-1 flex justify-between items-center">
-                                        <p className="text-sm">USD {value}</p>
-                                        <button className="py-1 px-3 text-white text-sm border border-darkGreen rounded-xl md:rounded-full focus:ring focus:ring-darkGreen bg-darkGreen hover:bg-mediumGreen transition ease-in-out duration-200" type="button">Purchase</button>
+                                        <p className="text-sm">{location}</p>
+                                        <button className="py-1 px-3 text-white text-sm border border-darkGreen rounded-xl md:rounded-full focus:ring focus:ring-darkGreen bg-darkGreen hover:bg-mediumGreen transition ease-in-out duration-200" type="button">Attach Report</button>
 
                                     </div>
 
