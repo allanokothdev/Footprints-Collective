@@ -68,6 +68,7 @@ const Register = () => {
             address: userCredential.user.uid,
             privateKey: userCredential.user.uid,
             email: email,
+            role: 'ADMIN',
             offsets: 0,
             footprint: 0,
             country: country,
