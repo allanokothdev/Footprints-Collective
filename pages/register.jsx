@@ -1,22 +1,93 @@
-import Head from 'next/head'
+import React, { useState } from 'react'
+import General from '../constants/General'
 import Link from 'next/link'
 
-import { AuthLayout } from '@/sections/AuthLayout'
-import { Button } from '@/sections/Button'
-import { SelectField, TextField } from '@/sections/Fields'
-import { Logo } from '@/sections/Logo'
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, firestore } from '../utils/firebase.js';
+import { useRouter } from 'next/router';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export default function Register() {
+const Register = () => {
+
+  const [formInput, updateFormInput] = useState({ title: '', country: '', email: '', password: '', channel: '' });
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  const validate = () => {
+
+    let isValid = true;
+
+    if (!formInput.title) {
+      toast.error('Please input Name');
+      isValid = false;
+    }
+
+    if (!formInput.country) {
+      toast.error('Please select country');
+      isValid = false;
+    }
+
+    if (!formInput.channel) {
+      toast.error('Please select channel');
+      isValid = false;
+    }
+
+    if (!formInput.email) {
+      toast.error('Please input email');
+      isValid = false;
+    } else if (!formInput.email.match(/\S+@\S+\.\S+/)) {
+      toast.error('Please input valid email');
+      isValid = false;
+    }
+
+    if (!formInput.password) {
+      toast.error('Please input password');
+      isValid = false;
+    } else if (formInput.password.length < 5) {
+      toast.error('Min password length of 5');
+      isValid = false;
+    }
+
+    if (isValid) {
+      console.log(formInput);
+      setLoading(true);
+      signUp(formInput.email, formInput.password);
+    }
+  }
+
+  const signUp = async (email, password) => {
+    try {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(async (userCredential) => {
+          sendEmailVerification(auth.currentUser).then(() => {
+            console.log('Send Email Verifications');
+            toast.success('Check your Email to verify your account');
+            setLoading(false);
+          });
+
+        }).catch((error) => {
+          setLoading(false);
+          console.log("Error processing transaction:", error);
+          toast.error(error.message);
+
+        });
+    } catch (error) {
+      setLoading(false);
+      toast.error(error.message);
+
+    }
+  };
+
   return (
-    <>
-      <Head>
-        <title>Sign Up - TaxPal</title>
-      </Head>
-      <AuthLayout>
-        <div className="flex flex-col">
-          <Link href="/" aria-label="Home">
-            <Logo className="h-10 w-auto" />
-          </Link>
+    <section className="flex flex-col md:flex-row h-screen items-center">
+      <div className="bg-darkGreen hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
+        <img src={General.Footprint} alt="" className="w-full h-full object-cover" />
+      </div>
+      <div
+        className="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12 flex items-center justify-center"
+      >
+        <div className="w-full h-100">
           <div className="mt-20">
             <h2 className="text-lg font-semibold text-gray-900">
               Get started for free
@@ -32,70 +103,41 @@ export default function Register() {
               to your account.
             </p>
           </div>
+          <form className="mt-6" action="#" method="POST">
+             <div>
+              <label className="block text-gray-700">Name</label>
+              <input aria-label='' type="text" name="title" id="title" placeholder="Enter Name" className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-darkGreen focus:ring-darkGreen focus:bg-white focus:outline-none" autofocus="" autoComplete="title" required="required" onChange={e => updateFormInput({ ...formInput, name: e.target.value })} />
+            </div>
+            <div className='mt-4'>
+              <label className="block text-gray-700">Email Address</label>
+              <input aria-label='' type="email" name="" id="email" placeholder="Enter Email Address" className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-darkGreen focus:ring-darkGreen focus:bg-white focus:outline-none" autofocus="" autoComplete="email" required="required" onChange={e => updateFormInput({ ...formInput, email: e.target.value })} />
+            </div>
+            <div className="mt-4">
+              <label className="block text-gray-700">Password</label>
+              <input aria-label='' type="password" name="password" id="" placeholder="Enter Password" minLength={6} className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-darkGreen focus:ring-darkGreen focus:bg-white focus:outline-none" autoComplete='password' required="required" onChange={e => updateFormInput({ ...formInput, password: e.target.value })} />
+            </div>
+            <div className="mt-4">
+              <label className="block text-gray-700">Country</label>
+              <select className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-darkGreen focus:ring-darkGreen focus:bg-white focus:outline-none" required="required" name="country" id="country" onChange={e => updateFormInput({ ...formInput, country: e.target.value })}>
+                <option value="Kenya">Kenya</option>
+                <option value="Rwanda">Rwanda</option>
+              </select>
+             </div>
+            <div className="mt-4">
+              <label className="block text-gray-700">How did you hear about us?</label>
+              <select className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-darkGreen focus:ring-darkGreen focus:bg-white focus:outline-none" required="required" name="channel" id="channel" onChange={e => updateFormInput({ ...formInput, channel: e.target.value })}>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Twitter">Twitter</option>
+              </select>
+            </div>
+            <button type="submit" className="w-full block bg-darkGreen hover:bg-mediumGreen focus:bg-mediumGreen text-white font-semibold rounded-lg px-4 py-3 mt-6"  > Register </button>
+          </form>
+          <ToastContainer />
         </div>
-        <form
-          action="#"
-          className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2"
-        >
-          <TextField
-            label="First name"
-            id="first_name"
-            name="first_name"
-            type="text"
-            autoComplete="given-name"
-            required
-          />
-          <TextField
-            label="Last name"
-            id="last_name"
-            name="last_name"
-            type="text"
-            autoComplete="family-name"
-            required
-          />
-          <TextField
-            className="col-span-full"
-            label="Email address"
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-          />
-          <TextField
-            className="col-span-full"
-            label="Password"
-            id="password"
-            name="password"
-            type="password"
-            autoComplete="new-password"
-            required
-          />
-          <SelectField
-            className="col-span-full"
-            label="How did you hear about us?"
-            id="referral_source"
-            name="referral_source"
-          >
-            <option>AltaVista search</option>
-            <option>Super Bowl commercial</option>
-            <option>Our route 34 city bus ad</option>
-            <option>The “Never Use This” podcast</option>
-          </SelectField>
-          <div className="col-span-full">
-            <Button
-              type="submit"
-              variant="solid"
-              color="green"
-              className="w-full"
-            >
-              <span>
-                Sign up <span aria-hidden="true">&rarr;</span>
-              </span>
-            </Button>
-          </div>
-        </form>
-      </AuthLayout>
-    </>
+      </div>
+    </section>
+
   )
 }
+
+export default Register

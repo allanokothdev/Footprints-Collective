@@ -4,6 +4,7 @@ import { getFirestore } from "firebase/firestore";
 import { getDatabase } from "firebase/database";
 import { getFunctions } from "firebase/functions";
 import { initializeAuth } from 'firebase/auth';
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCB9di_HCzOJDBzv4NMX_uxE6U96EJ68Ms",
@@ -22,6 +23,8 @@ const app = initializeApp(firebaseConfig);
 // Initialize Cloud Firestore and get a reference to the service
 const firestore = getFirestore(app);
 
+const storage = getStorage();
+
 // Initialize Firebase Realtime and get a reference to the service
 const database = getDatabase(app);
 // initialize auth
@@ -29,4 +32,4 @@ const auth = initializeAuth(app);
 
 const functions = getFunctions(app)
 
-export { auth, firestore, database, functions };
+export { auth, firestore, database, functions, storage };
