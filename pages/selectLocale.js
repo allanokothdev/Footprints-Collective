@@ -51,13 +51,12 @@ const selectLocale = () => {
 
                     <div className='mt-4 flex flex-row justify-between'>
                       <div>
-                        <label for="End Date" class="block text-sm font-bold text-gray-500 mb-1 dark:text-gray-700">Birthday</label>
-                        <input type="date" placeholder="John Doe" class="block  mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
+                        <label for="End Date" className="block text-sm font-bold text-gray-500 mb-1 dark:text-gray-700">Start Date</label>
+                        <input type="date" placeholder="John Doe" className="block  mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
                       </div>
-                      <p className='font-bold items-center text-black mx-4'>To</p>
                       <div>
-                        <label for="End Date" class="block text-sm font-bold text-gray-500 mb-1 dark:text-gray-700">Birthday</label>
-                        <input type="date" placeholder="John Doe" class="block  mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
+                        <label for="End Date" className="block text-sm font-bold text-gray-500 mb-1 dark:text-gray-700">End Date</label>
+                        <input type="date" placeholder="John Doe" className="block  mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
                       </div>
 
                     </div>
