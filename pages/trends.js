@@ -7,14 +7,14 @@ export default function Trends() {
   return (
     <BaseLayout>
       <Head>
-        <title>Carbon Trends</title>
+        <title>Carbon Insights</title>
         <meta name="description" content="Global Carbon Trends" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div>
 
         <div className='flex justify-between items-center px-3 h-16 border-b border-solid'>
-          <h1 className="font-semibold text-xl">Global Carbon Trends</h1>
+          <h1 className="font-semibold text-xl">Global Carbon Insights</h1>
         </div>
 
         <ul className="flex flex-1 flex-col gap-y-4 pt-3 px-3">
