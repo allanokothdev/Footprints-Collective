@@ -50,16 +50,31 @@ const Register = () => {
     }
 
     if (isValid) {
-      console.log(formInput);
       setLoading(true);
-      signUp(formInput.email, formInput.password);
+      signUp(formInput.title, formInput.country, formInput.channel, formInput.email, formInput.password);
     }
   }
 
-  const signUp = async (email, password) => {
+  const signUp = async (title, country, channel, email, password) => {
     try {
       createUserWithEmailAndPassword(auth, email, password)
         .then(async (userCredential) => {
+
+          const user = {
+            id: userCredential.user.uid,
+            title: account.title,
+            address: userCredential.user.uid,
+            privateKey: userCredential.user.uid,
+            email: email,
+            offsets: 0,
+            footprint: 0,
+            country: country,
+            channel: channel,
+            token: userCredential.user.uid,
+            created_at: Date.now(),
+            last_logged_in: Date.now(),
+          };
+
           sendEmailVerification(auth.currentUser).then(() => {
             console.log('Send Email Verifications');
             toast.success('Check your Email to verify your account');
