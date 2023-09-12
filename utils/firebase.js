@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getDatabase } from "firebase/database";
 import { getFunctions } from "firebase/functions";
-import { initializeAuth } from 'firebase/auth';
+import { browserLocalPersistence, initializeAuth, setPersistence } from 'firebase/auth';
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
@@ -29,6 +29,7 @@ const storage = getStorage();
 const database = getDatabase(app);
 // initialize auth
 const auth = initializeAuth(app);
+//await setPersistence(auth, browserLocalPersistence);
 
 const functions = getFunctions(app)
 

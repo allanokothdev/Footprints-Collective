@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import General from '../constants/General'
 import Link from 'next/link'
 
-import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, setPersistence, browserSessionPersistence } from 'firebase/auth';
 import { auth, firestore } from '../utils/firebase.js';
 import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
