@@ -4,8 +4,11 @@ import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import Forest from '../public/forest.jpg';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 export default function Calculator() {
+    const router = useRouter();
+    
     return (
         <BaseLayout>
             <Head>

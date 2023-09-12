@@ -5,8 +5,11 @@ import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function activityPage() {
+    const router = useRouter();
+    
     return (
         <BaseLayout>
             <Head>

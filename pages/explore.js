@@ -3,6 +3,7 @@ import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import React, { useState, useEffect } from 'react'
 import Head from "next/head";
+import { useRouter } from 'next/router';
 
 const PillFilter = ({ tag, onClick }) => {
     const [isActive, setActive] = useState(false);
@@ -28,6 +29,7 @@ const PillFilter = ({ tag, onClick }) => {
 };
 
 export default function Communities() {
+    const router = useRouter();
     const [filterList, setFilterList] = useState([]);
     const [renderList, setRenderList] = useState([]);
     const [tags, setTags] = useState(General.categories);
