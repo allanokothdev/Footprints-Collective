@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import General from '../constants/General'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
 import { auth, firestore } from '../utils/firebase.js';
@@ -12,6 +13,7 @@ const Register = () => {
 
   const [formInput, updateFormInput] = useState({ title: '', country: '', email: '', password: '', channel: '' });
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const validate = () => {
 
@@ -61,6 +63,7 @@ const Register = () => {
 
           const user = {
             id: userCredential.user.uid,
+            pic: General.PIC,
             title: title,
             address: userCredential.user.uid,
             privateKey: userCredential.user.uid,
@@ -79,6 +82,7 @@ const Register = () => {
               console.log('Send Email Verifications');
               toast.success('Check your Email to verify your account');
               setLoading(false);
+              router.push('/login');
             });
           }).catch((error) => {
             setLoading(false);
@@ -126,7 +130,7 @@ const Register = () => {
           <form className="mt-6" action="#" method="POST">
              <div>
               <label className="block text-gray-700">Name</label>
-              <input aria-label='' type="text" name="title" id="title" placeholder="Enter Name" className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-darkGreen focus:ring-darkGreen focus:bg-white focus:outline-none" autofocus="" autoComplete="title" required="required" onChange={e => updateFormInput({ ...formInput, name: e.target.value })} />
+              <input aria-label='' type="text" name="title" id="title" placeholder="Enter Name" className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-darkGreen focus:ring-darkGreen focus:bg-white focus:outline-none" autofocus="" autoComplete="title" required="required" onChange={e => updateFormInput({ ...formInput, title: e.target.value })} />
             </div>
             <div className='mt-4'>
               <label className="block text-gray-700">Email Address</label>

@@ -16,11 +16,13 @@ const Login = () => {
   const router = useRouter();
 
   const googleSignIn = () => {
+    setLoading(true);
     const provider = new GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
     signInWithPopup(auth, provider)
       .then((result) => {
-        
+        setLoading(false);
+        router.push("/dashboard");
       }).catch((error) => {
         setLoading(false);
         toast.error(error.message);
@@ -56,6 +58,7 @@ const Login = () => {
               last_logged_in: Date.now(),
             }).then(function () {
               setLoading(false);
+              router.push("/dashboard")
               toast.success('Logged In');
             }).catch((error) => {
               setLoading(false);

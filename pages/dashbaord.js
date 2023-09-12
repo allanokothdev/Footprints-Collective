@@ -3,7 +3,7 @@ import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import Head from "next/head";
 
-export default function Landing() {
+export default function Dashboard() {
   return (
     <BaseLayout>
       <Head>

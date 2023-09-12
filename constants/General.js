@@ -12,6 +12,8 @@ export default {
     NFT_SMART_CONTRACT: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
     DAO_SMART_CONTRACT: '0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1',
 
+    users: 'USERS',
+
     footprints: [
         { 
             id: 0,

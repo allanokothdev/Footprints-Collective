@@ -5,12 +5,14 @@ import {
     GoogleAuthProvider,
 } from "firebase/auth";
 import { auth } from '../utils/firebase'
+import { useRouter } from 'next/router'
 
 export const AuthenticatedUserContext = createContext({});
 
 export const AuthenticatedUserProvider = ({ children }) => {
     const [uid, setUid] = useState(null);
     const [user, setUser] = useState(null);
+    const router = useRouter();
 
     const googleSignIn = () => {
         const provider = new GoogleAuthProvider();

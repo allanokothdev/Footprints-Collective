@@ -14,7 +14,7 @@ import LogoIcon from '../public/logo.png'
 const sidebarItems = [
     {
         name: "Home",
-        href: "/",
+        href: "/dashboard",
         icon: HomeIcon,
     },
     {
