@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import General from '../constants/General'
 import Link from 'next/link'
 
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
 import { auth, firestore } from '../utils/firebase.js';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { doc, setDoc } from 'firebase/firestore';
 
 const Register = () => {
 

@@ -7,7 +7,7 @@ import { auth, firestore } from '../utils/firebase.js';
 import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { doc } from 'firebase/firestore';
+import { doc, updateDoc } from 'firebase/firestore';
 
 const Login = () => {
 
