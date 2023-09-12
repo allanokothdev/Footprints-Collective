@@ -79,8 +79,8 @@ export default function Communities() {
 
                 <ul className="flex flex-1 flex-col gap-y-4 p-3 overflow-auto">
                     {renderList.map(({ id, pic, title, summary, members, location, category }) => (
-                        <Link key={id} href={'/communityPage'} className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-4xl mx-auto">
-                            <div className="w-full md:w-1/3 bg-white grid">
+                        <div key={id} href={'/communityPage'} className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-4xl mx-auto">
+                            <div onClick={() => router.push('/communityPage', { item: ""})} className="w-full md:w-1/3 bg-white grid">
                                 <img src={pic} alt="tailwind logo" className="rounded-xl aspect-square w-48" />
                             </div>
                             <div className="w-full bg-white flex flex-col space-y-2 p-3">
@@ -99,7 +99,7 @@ export default function Communities() {
                                 </div>
 
                             </div>
-                        </Link>
+                        </div>
 
                     ))}
                 </ul>

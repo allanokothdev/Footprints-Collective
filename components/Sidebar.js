@@ -1,14 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Tooltip from '../components/Tooltip'
-
-import HomeIcon from '../public/home.svg?component'
-import CommunityIcon from '../public/community.svg?component'
-import ExploreIcon from '../public/explore.svg?component'
-import CalculatorIcon from '../public/calculator.svg?component'
-import MarketIcon from '../public/markets.svg?component'
-import OffsetIcon from '../public/offset.svg?component'
-import HistoryIcon from '../public/history.svg?.component'
 import LogoIcon from '../public/logo.png'
 
 const sidebarItems = [
@@ -53,6 +45,11 @@ const sidebarItems = [
         href: "/trends",
         icon: "M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605",
     },
+    {
+        name: "Audit Activities",
+        href: "/activities",
+        icon: "M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605",
+    },
 ];
 
 
@@ -64,15 +61,14 @@ export default function Sidebar() {
             </div>
             <ul className="flex flex-1 flex-col gap-y-4 pt-8 px-3">
                 {sidebarItems.map(({ name, href, icon }) => (
-                    <Link key={name} className="group relative aspect-square rounded-xl text-gray-400 p-2 hover:bg-mediumGreen" href={href}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" className="mt-2 h-6 w-6 stroke-current mx-auto">
+                    <Link key={name} className="group relative aspect-square rounded-xl text-gray-400 p-2 hover:bg-gray-200" href={href}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000" className="mt-2 h-6 w-6 stroke-current mx-auto">
                             <path stroke-linecap="round" stroke-linejoin="round" d={icon} />
                         </svg>
                         <Tooltip>
                             {name} <span className="text-gray-400" />
                         </Tooltip>
                     </Link>
-
                 ))}
             </ul>
         </aside>

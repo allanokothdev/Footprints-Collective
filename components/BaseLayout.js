@@ -32,7 +32,8 @@ const BaseLayout = ({ children }) => {
                         <h2 className="mt-3/4 font-normal">Empowering Sustainable LIfestyles</h2>
                     </div>
                     <div className="flex rounded-full bg-darkGreen pr-5 h-10 items-center border border-darkGreen">
-                        <img className="rounded-full bg-white float-left h-10 w-10 bg-contain" src={user?.pic}/> <span className="ml-3 text-white font-bold text-sm self-center line-clamp-1">{user?.title}</span>
+                        <img className="rounded-full bg-white float-left h-10 w-10 bg-contain" src={user?.pic}/>
+                         <span className="ml-3 text-white font-bold text-sm self-center line-clamp-1">{user?.title}</span>
                     </div>
                 </div>
 
