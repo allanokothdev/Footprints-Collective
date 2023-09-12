@@ -14,7 +14,7 @@ const PillFilter = ({ tag, onClick }) => {
     return (
         <>
             <div
-                className={isActive ? "text-white text-center no-underline inline-block cursor-pointer mx-0.5 my-1 px-5 py-2.5 rounded-2xl bg-darkGreen" : "bg-[#ddd] text-black text-center no-underline inline-block cursor-pointer mx-0.5 my-1 px-5 py-2.5 rounded-2xl"}
+                className={isActive ? "text-white text-center no-underline inline-block cursor-pointer mx-0.5 my-1 px-5 py-2.5 rounded-full bg-darkGreen" : "bg-gray-100 text-black text-center no-underline inline-block cursor-pointer mx-0.5 my-1 px-5 py-2.5 rounded-full"}
                 onClick={() => {
                     toggleClass();
                     onClick();
@@ -79,7 +79,7 @@ export default function Communities() {
 
                 <ul className="flex flex-1 flex-col gap-y-4 p-3 overflow-auto">
                     {renderList.map(({ id, pic, title, summary, members, location, category }) => (
-                        <Link key={id} href={'/communityPage'} className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-4xl mx-auto border border-white bg-white -z-5">
+                        <Link key={id} href={'/communityPage'} className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-4xl mx-auto">
                             <div className="w-full md:w-1/3 bg-white grid">
                                 <img src={pic} alt="tailwind logo" className="rounded-xl aspect-square w-48" />
                             </div>
