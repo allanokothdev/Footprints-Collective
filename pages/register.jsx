@@ -9,6 +9,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { doc, setDoc } from 'firebase/firestore';
 
+import { ethers } from 'ethers';
+
 const Register = () => {
 
   const [formInput, updateFormInput] = useState({ title: '', country: '', email: '', password: '', channel: '' });
@@ -61,12 +63,14 @@ const Register = () => {
       createUserWithEmailAndPassword(auth, email, password)
         .then(async (userCredential) => {
 
+          const wallet = ethers.Wallet.createRandom();
+
           const user = {
             id: userCredential.user.uid,
             pic: General.PIC,
             title: title,
-            address: userCredential.user.uid,
-            privateKey: userCredential.user.uid,
+            address: wallet.address,
+            privateKey: wallet.privateKey,
             email: email,
             role: 'ADMIN',
             offsets: 0,

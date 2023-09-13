@@ -51,25 +51,32 @@ const Login = () => {
   const signIn = (email, password) => {
     setTimeout(async () => {
       try {
-        await setPersistence(auth, browserLocalPersistence);
-        signInWithEmailAndPassword(auth, email, password)
-          .then(async (userCredential) => {
-            const userRef = doc(firestore, General.users, userCredential.user.uid);
-            await updateDoc(userRef, {
-              last_logged_in: Date.now(),
-            }).then(function () {
-              setLoading(false);
-              router.push("/dashboard")
-              toast.success('Logged In');
-            }).catch((error) => {
-              setLoading(false);
-              toast.error(error.message);
-              console.log(error.message)
-            });
-          }).catch((error) => {
-            setLoading(false);
-            toast.error(error.message);
-            console.log(error.message)
+        setPersistence(auth, browserLocalPersistence)
+          .then(() => {
+            signInWithEmailAndPassword(auth, email, password)
+              .then(async (userCredential) => {
+                const userRef = doc(firestore, General.users, userCredential.user.uid);
+                await updateDoc(userRef, {
+                  last_logged_in: Date.now(),
+                }).then(function () {
+                  setLoading(false);
+                  router.push("/dashboard")
+                  toast.success('Logged In');
+                }).catch((error) => {
+                  setLoading(false);
+                  toast.error(error.message);
+                  console.log(error.message)
+                });
+              }).catch((error) => {
+                setLoading(false);
+                toast.error(error.message);
+                console.log(error.message)
+              });
+          })
+          .catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
           });
       } catch (error) {
         setLoading(false);

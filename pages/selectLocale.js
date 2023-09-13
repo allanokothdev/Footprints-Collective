@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
+import Footprint from '../public/footprint.jpg';
+import Image from 'next/image';
 
 const selectLocale = () => {
   const router = useRouter();
@@ -30,7 +32,11 @@ const selectLocale = () => {
             <div className="grid  gap-0 grid-cols-1">
               <div className="flex flex-col">
                 <div className="mt-0">
-                  <div className="form">
+
+                  <div className="w-full rounded-xl bg-cover bg-no-repeat bg-center aspect-[5/1]">
+                    <Image className="rounded-xl bg-no-repeat bg-center bg-cover object-cover w-full h-full aspect-[5/1]" src={Footprint} alt="" />
+                  </div>
+                  <div className="form mt-4">
 
                     <div>
                       <label className="block text-gray-700">Enter Person/Business/Event Title</label>
@@ -86,7 +92,7 @@ const selectLocale = () => {
                     <div className="mt-5 text-right md:space-x-3 md:block flex flex-col-reverse">
 
                       <button className="mb-2 md:mb-0 bg-darkGreen px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-middleGreen">
-                        Publish
+                        Next
                       </button>
                     </div>
                   </div>

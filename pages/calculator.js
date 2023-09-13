@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
-import Forest from '../public/forest.jpg';
+import Footprint from '../public/footprint.jpg';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -21,8 +21,8 @@ export default function Calculator() {
                     <h1 className="font-semibold text-xl">Carbon Footprint Calculator</h1>
                 </div>
                 <div className='m-5 rounded-xl'>
-                    <div className="w-full rounded-xl bg-cover bg-no-repeat bg-center" style={{ height: 400 }}>
-                        <Image className="rounded-xl bg-no-repeat bg-center bg-cover w-full h-full" src={Forest} alt="" />
+                    <div className="w-full rounded-xl bg-cover bg-no-repeat bg-center aspect-[5/2]">
+                        <Image className="rounded-xl bg-no-repeat bg-center bg-contain object-cover w-full h-full aspect-[5/2]" src={Footprint} alt="" />
                     </div>
 
                     <p className="m-auto inset-0 text-xl font-medium leading-normal text-black py-2">
