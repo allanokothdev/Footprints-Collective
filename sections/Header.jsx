@@ -92,17 +92,17 @@ function MobileNavigation() {
 
 export function Header() {
   return (
-    <header className="py-8">
+    <header className="py-8 bg-white">
       <nav className="relative z-50 flex justify-between mx-7">
         <div className="flex items-center md:gap-x-12">
           <Link href="#" aria-label="Home">
             <span className="p-1 text-xl font-black leading-none text-gray-900 w-auto">{General.APP_NAME}</span>
           </Link>
-          <div className="hidden md:flex md:gap-x-6">
-            <NavLink href="#features">Features</NavLink>
-            <NavLink href="#testimonials">Testimonials</NavLink>
-            <NavLink href="#pricing">Pricing</NavLink>
-          </div>
+        </div>
+        <div className="hidden md:flex md:gap-x-6">
+          <NavLink href="#features">Features</NavLink>
+          <NavLink href="#testimonials">Testimonials</NavLink>
+          <NavLink href="#pricing">Pricing</NavLink>
         </div>
         <div className="flex items-center gap-x-5 md:gap-x-8">
           <div className="hidden md:block">

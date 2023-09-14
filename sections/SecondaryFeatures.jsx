@@ -211,10 +211,10 @@ export function SecondaryFeatures() {
     <section
       id="secondary-features"
       aria-label="Features for simplifying everyday business tasks"
-      className="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32"
+      className="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32 bg-white"
     >
       <Container>
-        <div className="mx-auto max-w-2xl md:text-center">
+        <div className="mx-auto max-w-2xl md:text-center bg-white">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
             Simplify everyday business tasks.
           </h2>

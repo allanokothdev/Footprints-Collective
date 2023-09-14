@@ -71,8 +71,8 @@ export function Faqs() {
         height={946}
         unoptimized
       />
-      <Container className="relative">
-        <div className="mx-auto max-w-2xl lg:mx-0">
+      <Container className="relative bg-white">
+        <div className="mx-auto max-w-2xl lg:mx-0 bg-white">
           <h2
             id="faq-title"
             className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
