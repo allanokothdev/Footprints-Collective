@@ -92,34 +92,32 @@ function MobileNavigation() {
 
 export function Header() {
   return (
-    <header className="py-10">
-      <Container>
-        <nav className="relative z-50 flex justify-between">
-          <div className="flex items-center md:gap-x-12">
-            <Link href="#" aria-label="Home">
-              <span className="p-1 text-xl font-black leading-none text-gray-900 w-auto">{General.APP_NAME}</span>
-            </Link>
-            <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="#features">Features</NavLink>
-              <NavLink href="#testimonials">Testimonials</NavLink>
-              <NavLink href="#pricing">Pricing</NavLink>
-            </div>
+    <header className="py-8">
+      <nav className="relative z-50 flex justify-between mx-7">
+        <div className="flex items-center md:gap-x-12">
+          <Link href="#" aria-label="Home">
+            <span className="p-1 text-xl font-black leading-none text-gray-900 w-auto">{General.APP_NAME}</span>
+          </Link>
+          <div className="hidden md:flex md:gap-x-6">
+            <NavLink href="#features">Features</NavLink>
+            <NavLink href="#testimonials">Testimonials</NavLink>
+            <NavLink href="#pricing">Pricing</NavLink>
           </div>
-          <div className="flex items-center gap-x-5 md:gap-x-8">
-            <div className="hidden md:block">
-              <NavLink href="/login">Sign in</NavLink>
-            </div>
-            <Button href="/register" color="green">
-              <span>
-                Get started <span className="hidden lg:inline">today</span>
-              </span>
-            </Button>
-            <div className="-mr-1 md:hidden">
-              <MobileNavigation />
-            </div>
+        </div>
+        <div className="flex items-center gap-x-5 md:gap-x-8">
+          <div className="hidden md:block">
+            <NavLink href="/login">Sign in</NavLink>
           </div>
-        </nav>
-      </Container>
+          <Button href="/register" color="green">
+            <span>
+              Get started <span className="hidden lg:inline">today</span>
+            </span>
+          </Button>
+          <div className="-mr-1 md:hidden">
+            <MobileNavigation />
+          </div>
+        </div>
+      </nav>
     </header>
   )
 }
