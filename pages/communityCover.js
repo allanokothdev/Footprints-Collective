@@ -1,3 +1,4 @@
+import React, { useContext, useEffect, useState } from 'react';
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import BaseLayout from "@/components/BaseLayout";

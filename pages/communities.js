@@ -1,7 +1,7 @@
+import React, { useContext, useEffect, useState } from 'react';
 import Link from "next/link";
 import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
-import React, { useState, useEffect } from 'react'
 import Head from "next/head";
 import { useRouter } from 'next/router';
 

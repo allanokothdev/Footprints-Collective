@@ -1,3 +1,4 @@
+import React, { useContext, useEffect, useState } from 'react';
 import WideLayout from '../components/WideLayout';
 import Head from 'next/head'
 import { useRouter } from "next/router";

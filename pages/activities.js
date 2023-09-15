@@ -1,11 +1,31 @@
-import Link from "next/link";
+import React, { useContext, useEffect, useState } from 'react';
 import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { firestore } from '../utils/firebase.js';
+import { collection, onSnapshot, query } from 'firebase/firestore';
 
-export default function Markets() {
+export default function Activities() {
     const router = useRouter();
+    const [activitiesList, setActivitiesList] = useState([]); // Initial empty array of activities
+
+    useEffect(() => {
+        const fetchData = async (uid) => {
+            const q = query(collection(firestore, General.deposits));
+            const unsubscribe = onSnapshot(q, (querySnapshot) => {
+                const objectList = [];
+                querySnapshot.forEach((doc) => {
+                    objectList.push({
+                        id: doc.id,
+                        ...doc.data(),
+                    });
+                });
+                setActivitiesList(objectList);
+            });
+        }
+        fetchData();
+    }, [uid]);
 
     return (
         <BaseLayout>

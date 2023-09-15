@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React, { useContext, useEffect, useState } from 'react';
 import Image from 'next/image'
 import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';

@@ -3,6 +3,7 @@ import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import { useRouter } from "next/router";
 import Head from "next/head";
+import React, { useContext, useEffect, useState } from 'react';
 
 export default function Markets() {
     const router = useRouter();
