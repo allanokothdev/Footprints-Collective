@@ -7,9 +7,32 @@ import Forest from '../public/forest.jpg';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { AuthenticatedUserContext } from '../providers';
+import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 
 export default function communityCover() {
   const router = useRouter();
+
+  const community = router.query;
+  const { user } = useContext(AuthenticatedUserContext);
+  const [activities, setActivitiesList] = useState([]); // Initial empty array of activities
+
+  useEffect(() => {
+    const fetchData = async (uid) => {
+      const q = query(collection(firestore, General.activities), where("tags", "array-contains", uid), orderBy('timestamp', 'desc'));
+      const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const objectList = [];
+        querySnapshot.forEach((doc) => {
+          objectList.push({
+            id: doc.id,
+            ...doc.data(),
+          });
+        });
+        setActivitiesList(objectList);
+      });
+    }
+    fetchData(community.id);
+  }, [community]);
   
   return (
     <BaseLayout>

@@ -1,5 +1,7 @@
 import React from 'react'
 import React, { useContext, useEffect, useState } from 'react';
+import { AuthenticatedUserContext } from '../providers';
+import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 
 const individualSurvey = () => {
   return (

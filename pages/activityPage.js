@@ -5,6 +5,8 @@ import General from '../constants/General';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { AuthenticatedUserContext } from '../providers';
+import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 
 export default function activityPage() {
     const router = useRouter();

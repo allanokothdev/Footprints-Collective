@@ -4,6 +4,8 @@ import General from '../constants/General';
 import React, { useContext, useEffect, useState } from 'react';
 import Head from "next/head";
 import { useRouter } from 'next/router';
+import { AuthenticatedUserContext } from '../providers';
+import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 
 const PillFilter = ({ tag, onClick }) => {
     const [isActive, setActive] = useState(false);
@@ -28,29 +30,50 @@ const PillFilter = ({ tag, onClick }) => {
     );
 };
 
-export default function Communities() {
+export default function Explore() {
     const router = useRouter();
     const [filterList, setFilterList] = useState([]);
     const [renderList, setRenderList] = useState([]);
     const [tags, setTags] = useState(General.categories);
 
+    const { user } = useContext(AuthenticatedUserContext);
+    const [communityList, setCommunityList] = useState([]); // Initial empty array of activities
+
     useEffect(() => {
-        if (!filterList === undefined || !filterList.length < 1) {
-            let filtered = [];
-            General.communities.forEach((item) => {
-                item.tags.forEach((tag) => {
-                    if (filterList.includes(tag)) {
-                        if (!filtered.includes(item)) {
-                            filtered.push(item);
-                        }
-                    }
+        const fetchData = async (country) => {
+            const q = query(collection(firestore, General.communities), where("tags", "array-contains", country), orderBy('timestamp', 'desc'));
+            const unsubscribe = onSnapshot(q, (querySnapshot) => {
+                const objectList = [];
+                querySnapshot.forEach((doc) => {
+                    objectList.push({
+                        id: doc.id,
+                        ...doc.data(),
+                    });
                 });
+                setCommunityList(objectList);
             });
-            setRenderList(filtered);
-        } else {
-            setRenderList(General.communities);
         }
-    }, [filterList]);
+
+        const filteredList = async (filterList) => {
+            if (!filterList === undefined || !filterList.length < 1) {
+                let filtered = [];
+                General.communities.forEach((item) => {
+                    item.tags.forEach((tag) => {
+                        if (filterList.includes(tag)) {
+                            if (!filtered.includes(item)) {
+                                filtered.push(item);
+                            }
+                        }
+                    });
+                });
+                setRenderList(filtered);
+            } else {
+                setRenderList(General.communities);
+            }
+        }
+        filteredList(filterList);
+        fetchData(user.country);
+    }, [user, filterList]);
 
     return (
         <BaseLayout>

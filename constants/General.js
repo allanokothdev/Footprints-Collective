@@ -13,19 +13,11 @@ export default {
     DAO_SMART_CONTRACT: '0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1',
 
     users: 'USERS',
-
-    footprints: [
-        { 
-            id: 0,
-            pic: 'https://firebasestorage.googleapis.com/v0/b/footprint-collective.appspot.com/o/Branding%2Flogo.png?alt=media&token=5545da2a-dfa7-4864-9ce5-18ec9086f317',
-            timestamp: '',
-            carbon_output: '',
-            title: 'Person',
-            summary: '',
-            country: 'Rwanda',
-
-        },
-    ],
+    activities: 'ACTIVITIES',
+    communities: 'COMMUNITIES',
+    footprints: 'FOOTPRINTS',
+    offsets: 'OFFSETS',
+    certificates: 'CERTIFICATES',
 
     nfts: [
         { 

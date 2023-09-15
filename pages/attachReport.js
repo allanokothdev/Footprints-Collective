@@ -5,6 +5,8 @@ import General from '../constants/General';
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useState, useContext } from "react";
+import { AuthenticatedUserContext } from '../providers';
+import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 
 
 export default function CreateActivity() {

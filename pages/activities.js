@@ -4,15 +4,16 @@ import General from '../constants/General';
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { firestore } from '../utils/firebase.js';
-import { collection, onSnapshot, query } from 'firebase/firestore';
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 
 export default function Activities() {
     const router = useRouter();
+    const { uid } = useContext(AuthenticatedUserContext);
     const [activitiesList, setActivitiesList] = useState([]); // Initial empty array of activities
 
     useEffect(() => {
-        const fetchData = async (uid) => {
-            const q = query(collection(firestore, General.deposits));
+        const fetchData = async () => {
+            const q = query(collection(firestore, General.activities), orderBy('timestamp', 'desc'));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
                 const objectList = [];
                 querySnapshot.forEach((doc) => {
@@ -25,7 +26,7 @@ export default function Activities() {
             });
         }
         fetchData();
-    }, [uid]);
+    }, []);
 
     return (
         <BaseLayout>

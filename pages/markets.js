@@ -4,9 +4,31 @@ import General from '../constants/General';
 import { useRouter } from "next/router";
 import Head from "next/head";
 import React, { useContext, useEffect, useState } from 'react';
+import { AuthenticatedUserContext } from '../providers';
+import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 
 export default function Markets() {
     const router = useRouter();
+
+    const { uid } = useContext(AuthenticatedUserContext);
+    const [certificateList, setCertificateList] = useState([]); // Initial empty array of activities
+
+    useEffect(() => {
+        const fetchData = async (uid) => {
+            const q = query(collection(firestore, General.offsets), where("tags", "array-contains", uid), orderBy('timestamp', 'desc'));
+            const unsubscribe = onSnapshot(q, (querySnapshot) => {
+                const objectList = [];
+                querySnapshot.forEach((doc) => {
+                    objectList.push({
+                        id: doc.id,
+                        ...doc.data(),
+                    });
+                });
+                setCertificateList(objectList);
+            });
+        }
+        fetchData();
+    }, [uid]);
 
     return (
         <BaseLayout>

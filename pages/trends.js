@@ -5,9 +5,29 @@ import General from '../constants/General';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react';
+import { AuthenticatedUserContext } from '../providers';
+import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 
 export default function Trends() {
   const router = useRouter();
+  const [footprintList, setFootprintList] = useState([]); // Initial empty array of activities
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const q = query(collection(firestore, General.footprints), orderBy('timestamp', 'desc'));
+      const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const objectList = [];
+        querySnapshot.forEach((doc) => {
+          objectList.push({
+            id: doc.id,
+            ...doc.data(),
+          });
+        });
+        setFootprintList(objectList);
+      });
+    }
+    fetchData();
+  }, []);
   
   return (
     <BaseLayout>
