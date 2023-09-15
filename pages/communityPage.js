@@ -13,6 +13,24 @@ export default function communityPage() {
     const community = router.query;
     const { user } = useContext(AuthenticatedUserContext);
     const [activities, setActivitiesList] = useState([]); // Initial empty array of activities
+    
+
+    useEffect(() => {
+        const fetchData = async (uid) => {
+            const q = query(collection(firestore, General.activities), where("tags", "array-contains", uid), orderBy('timestamp', 'desc'));
+            const unsubscribe = onSnapshot(q, (querySnapshot) => {
+                const objectList = [];
+                querySnapshot.forEach((doc) => {
+                    objectList.push({
+                        id: doc.id,
+                        ...doc.data(),
+                    });
+                });
+                setActivitiesList(objectList);
+            });
+        }
+        fetchData(community.id);
+    }, [community]);
 
     useEffect(() => {
         const fetchData = async (uid) => {
