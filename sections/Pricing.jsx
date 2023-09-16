@@ -121,10 +121,10 @@ export function Pricing() {
             description="Good for anyone who is self-employed and just getting started."
             href="/register"
             features={[
-              'Send 10 quotes and invoices',
-              'Connect up to 2 bank accounts',
-              'Track up to 15 expenses per month',
-              'Manual payroll support',
+              'Create Chapters',
+              'Unlimited Membership',
+              'Unlimited Chapters',
+              'Unlimited Activities',
               'Export up to 3 reports',
             ]}
           />
@@ -135,10 +135,10 @@ export function Pricing() {
             description="Perfect for small / medium sized businesses."
             href="/register"
             features={[
-              'Send 25 quotes and invoices',
-              'Connect up to 5 bank accounts',
-              'Track up to 50 expenses per month',
-              'Automated payroll support',
+              'Inbound Customer Generation',
+              'Unlimited Chapters',
+              'Sell Sustainable Product',
+              'Brand Visibility',
               'Export up to 12 reports',
               'Bulk reconcile transactions',
               'Track in multiple currencies',
@@ -150,9 +150,9 @@ export function Pricing() {
             description="For even the biggest enterprise companies."
             href="/register"
             features={[
-              'Send unlimited quotes and invoices',
-              'Connect up to 15 bank accounts',
-              'Track up to 200 expenses per month',
+              'Global Carbon Insights',
+              'Global Offsetting Insights',
+              'Oslo',
               'Automated payroll support',
               'Export up to 25 reports, including TPS',
             ]}

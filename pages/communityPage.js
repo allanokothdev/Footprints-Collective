@@ -13,7 +13,10 @@ export default function communityPage() {
     const community = router.query;
     const { user } = useContext(AuthenticatedUserContext);
     const [activities, setActivitiesList] = useState([]); // Initial empty array of activities
-    
+    const [requestList, setRequestList] = useState([]); // Initial empty array of requests
+    const [chapterList, setChapterList] = useState([]); // Initial empty array of chapters
+    const [notificationList, setNotificationList] = useState([]); // Initial empty array of notifications
+
 
     useEffect(() => {
         const fetchData = async (uid) => {
