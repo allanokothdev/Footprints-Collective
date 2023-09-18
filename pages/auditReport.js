@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
-import { AuthenticatedUserContext } from '../providers';
+import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
 import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 
 export default function AuditReport() {

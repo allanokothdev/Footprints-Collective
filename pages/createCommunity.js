@@ -5,7 +5,7 @@ import General from '../constants/General';
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useState, useContext } from "react";
-import { AuthenticatedUserContext } from '../providers';
+import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
 import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
 
 

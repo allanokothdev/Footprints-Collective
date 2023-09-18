@@ -4,7 +4,7 @@ import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import Head from "next/head";
 import { useRouter } from 'next/router';
-import { AuthenticatedUserContext } from '../providers';
+import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
 import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 
 const PillFilter = ({ tag, onClick }) => {

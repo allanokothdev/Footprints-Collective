@@ -7,7 +7,7 @@ import Forest from '../public/forest.jpg';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { AuthenticatedUserContext } from '../providers';
+import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
 import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 
 export default function communityCover() {

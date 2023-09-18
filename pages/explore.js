@@ -4,7 +4,7 @@ import General from '../constants/General';
 import React, { useContext, useEffect, useState } from 'react';
 import Head from "next/head";
 import { useRouter } from 'next/router';
-import { AuthenticatedUserContext } from '../providers';
+import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
 import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 
 const PillFilter = ({ tag, onClick }) => {
