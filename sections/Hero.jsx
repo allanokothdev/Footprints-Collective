@@ -26,7 +26,7 @@ export function Hero() {
             </svg>
             <span className="relative">Climate Action</span>
           </span>{' '}
-          with Tangible Rewards.
+          with Tangible Impact.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
           Empowering Communities to Lead the Way in Climate Resilience: Join Footprints Collective, Where Collective Action Transforms Climate Concern into Lasting Impact
