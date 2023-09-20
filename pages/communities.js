@@ -3,9 +3,11 @@ import Link from "next/link";
 import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import Head from "next/head";
+import { firestore } from '../utils/firebase.js';
 import { useRouter } from 'next/router';
 import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
 import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
+import Databases from '../constants/Databases';
 
 const PillFilter = ({ tag, onClick }) => {
     const [isActive, setActive] = useState(false); 
@@ -40,7 +42,7 @@ export default function Communities() {
 
     useEffect(() => {
         const fetchData = async (uid) => {
-            const q = query(collection(firestore, General.communities), where("members", "array-contains", uid), orderBy('timestamp', 'desc'));
+            const q = query(collection(firestore, Databases.communities), where("members", "array-contains", uid), orderBy('timestamp', 'desc'));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
                 const objectList = [];
                 querySnapshot.forEach((doc) => {

@@ -3,9 +3,11 @@ import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { firestore } from '../utils/firebase.js';
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
 import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
+import Databases from "../constants/Databases";
 
 export default function Markets() {
     const router = useRouter();
@@ -15,7 +17,7 @@ export default function Markets() {
 
     useEffect(() => {
         const fetchData = async (uid) => {
-            const q = query(collection(firestore, General.offsets), where("tags", "array-contains", uid), orderBy('timestamp', 'desc'));
+            const q = query(collection(firestore, Databases.offsets), where("tags", "array-contains", uid), orderBy('timestamp', 'desc'));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
                 const objectList = [];
                 querySnapshot.forEach((doc) => {
@@ -27,7 +29,7 @@ export default function Markets() {
                 setCertificateList(objectList);
             });
         }
-        fetchData();
+        fetchData(uid);
     }, [uid]);
 
     return (

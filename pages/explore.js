@@ -3,9 +3,11 @@ import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import React, { useContext, useEffect, useState } from 'react';
 import Head from "next/head";
+import { firestore } from '../utils/firebase.js';
 import { useRouter } from 'next/router';
 import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
 import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
+import Databases from "../constants/Databases";
 
 const PillFilter = ({ tag, onClick }) => {
     const [isActive, setActive] = useState(false);
@@ -41,7 +43,7 @@ export default function Explore() {
 
     useEffect(() => {
         const fetchData = async (country) => {
-            const q = query(collection(firestore, General.communities), where("tags", "array-contains", country), orderBy('timestamp', 'desc'));
+            const q = query(collection(firestore, Databases.communities), where("tags", "array-contains", country), orderBy('timestamp', 'desc'));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
                 const objectList = [];
                 querySnapshot.forEach((doc) => {

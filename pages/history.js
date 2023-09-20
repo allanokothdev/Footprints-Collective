@@ -3,10 +3,12 @@ import { Inter } from 'next/font/google'
 import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import Head from 'next/head';
+import { firestore } from '../utils/firebase.js';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
 import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
+import Databases from '../constants/Databases';
 
 export default function History() {
     const router = useRouter();
@@ -15,7 +17,7 @@ export default function History() {
 
     useEffect(() => {
         const fetchData = async (uid) => {
-            const q = query(collection(firestore, General.footprints), where("tags", "array-contains", uid), orderBy('timestamp', 'desc'));
+            const q = query(collection(firestore, Databases.footprints), where("tags", "array-contains", uid), orderBy('timestamp', 'desc'));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
                 const objectList = [];
                 querySnapshot.forEach((doc) => {

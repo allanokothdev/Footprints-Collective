@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
 import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
+import Databases from "../constants/Databases";
+import { firestore } from "../utils/firebase";
 
 export default function Trends() {
   const router = useRouter();
@@ -12,7 +14,7 @@ export default function Trends() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const q = query(collection(firestore, General.footprints), orderBy('timestamp', 'desc'));
+      const q = query(collection(firestore, Databases.footprints), orderBy('timestamp', 'desc'));
       const unsubscribe = onSnapshot(q, (querySnapshot) => {
         const objectList = [];
         querySnapshot.forEach((doc) => {
