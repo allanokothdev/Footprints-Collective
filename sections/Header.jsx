@@ -7,6 +7,7 @@ import { Button } from '@/sections/Button'
 import { Container } from '@/sections/Container'
 import { Logo } from '@/sections/Logo'
 import { NavLink } from '@/sections/NavLink'
+import { SignLink } from '@/sections/SignLink'
 import General from '../constants/General';
 
 function MobileNavLink({ href, children }) {
@@ -106,7 +107,7 @@ export function Header() {
         </div>
         <div className="flex items-center gap-x-5 md:gap-x-8">
           <div className="hidden md:block">
-            <NavLink href="/login">Sign in</NavLink>
+            <SignLink href="/login">Sign in</SignLink>
           </div>
           <Button href="/register" color="green">
             <span>
