@@ -8,7 +8,6 @@ import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 
 export default function Activities() {
     const router = useRouter();
-    const { uid } = useContext(AuthenticatedUserContext);
     const [activitiesList, setActivitiesList] = useState([]); // Initial empty array of activities
 
     useEffect(() => {
