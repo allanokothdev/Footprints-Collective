@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import { firestore } from '../utils/firebase.js';
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
+import Databases from '../constants/Databases';
 
 export default function Activities() {
     const router = useRouter();
@@ -12,7 +13,7 @@ export default function Activities() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const q = query(collection(firestore, General.activities), orderBy('timestamp', 'desc'));
+            const q = query(collection(firestore, Databases.activities), orderBy('timestamp', 'desc'));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
                 const objectList = [];
                 querySnapshot.forEach((doc) => {
