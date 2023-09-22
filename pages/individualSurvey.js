@@ -91,14 +91,34 @@ export default function IndividualSurvey() {
                 <Formik
                   validationSchema={schema}
                   initialValues={{
-                    name: '',
-                    email: '',
-                    phone: '',
-                    plan: '',
-                    price: '',
-                    check_plan: '',
-                    add_on: [],
-                    price_add_on: [],
+                    diet: '',
+                    eat_out: '',
+                    food_waste: '',
+                    vehicle_type: '',
+                    commuting_hours: '',        //  Number
+                    car_type: '',
+                    flights_domestic: '',
+                    flights_1250: '',           //  Number
+                    flights_2500: '',           //  Number
+                    flights_5500: '',           //  Number
+                    flights_9000: '',           //  Number
+                    flights_17500: '',          //  Number
+                    house_residents: '',        //  Number
+                    house_type: '',
+                    house_size: '',             //  Number
+                    recycle: '',
+                    house_17plus_residents: '', //  Number
+                    energy_heating: '',
+                    energy_tariff: '',
+                    energy_standby: '',
+                    energy_winter: '',
+                    energy_efficiency: '',
+                    energy_items: [],
+                    fashion_budget: '',
+                    food_pets_budget: '',       //  Number
+                    fashion_beauty_budget: '',  //  Number
+                    electronics_contract: '',
+                    waste_components: [],
                   }}
                   onSubmit={(values, actions) => {
                     handleNextStep(values, actions);
