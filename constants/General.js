@@ -1,6 +1,6 @@
 export default {
     APP_NAME: 'Footprints Collective.',
-    slogan: 'Empowering Sustainable Lifestyles',
+    slogan: 'Empowering Community-based Climate action',
     summary: 'Be part of the Solution, not the Pollution',
 
     Footprint: 'https://firebasestorage.googleapis.com/v0/b/footprint-collective.appspot.com/o/Branding%2Flouisa-potter-0YaUgdjZ7-Y-unsplash.jpg?alt=media&token=57742821-9e10-4a04-8204-5812ceb2604f',

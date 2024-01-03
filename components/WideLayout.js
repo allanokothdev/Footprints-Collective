@@ -1,5 +1,5 @@
 import Sidebar from "./Sidebar";
-import { firestore } from "../utils/firebase";
+import { firestore } from "../firebase";
 import { doc, getDoc } from "firebase/firestore";
 import React, { useState, useContext, useEffect } from 'react'
 import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
