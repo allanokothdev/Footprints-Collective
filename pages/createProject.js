@@ -77,7 +77,7 @@ export default function CreateCommunity() {
                       <label className="font-semibold text-gray-600 py-2"> Project Title <abbr title="required">*</abbr>
                       </label>
                       <input
-                        placeholder="Enter Community Title"
+                        placeholder="Enter Project Title"
                         className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-14 px-4"
                         required="required"
                         type="text"
@@ -136,7 +136,7 @@ export default function CreateCommunity() {
                         name="summary"
                         id="summary"
                         className="min-h-[100px] max-h-[300px] h-28 appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg  py-4 px-4"
-                        placeholder="Enter Community Description"
+                        placeholder="Enter Project Description"
                         spellCheck="false"
                         defaultValue={""}
                         onChange={e => updateFormInput({ ...formInput, summary: e.target.value })}

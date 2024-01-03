@@ -87,7 +87,7 @@ export default function Communities() {
 
                 <div className='flex justify-between items-center px-3 h-16 border-b border-solid'>
                     <h1 className="font-semibold text-xl">Projects</h1>
-                    <button className="inline-flex items-center w-full px-6 py-3 text-sm font-bold leading-4 text-white bg-darkGreen md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-mediumGreen focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-darkGreen" type="button">Create Project</button>
+                    <button onClick={'/projects'} className="inline-flex items-center w-full px-6 py-3 text-sm font-bold leading-4 text-white bg-darkGreen md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-mediumGreen focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-darkGreen" type="button">Create Project</button>
               
                 </div>
 
@@ -106,7 +106,7 @@ export default function Communities() {
 
                 <ul className="flex flex-1 flex-col gap-y-4 p-3 overflow-auto">
                     {renderList.map(({ id, pic, title, summary, members, location, category }) => (
-                        <div key={id} href={'/communityPage'} className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-4xl mx-auto">
+                        <div key={id} href={'/'} className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-4xl mx-auto">
                             <div onClick={() => router.push('/communityPage', { item: ""})} className="w-full md:w-1/3 bg-white grid">
                                 <img src={pic} alt="tailwind logo" className="rounded-xl aspect-square w-48" />
                             </div>

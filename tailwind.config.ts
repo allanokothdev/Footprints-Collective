@@ -38,8 +38,8 @@ const config: Config = {
         display: ['Lexend', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        darkGreen: '#10172a',
-        mediumGreen: '#10172a',
+        darkGreen: '#006400',
+        mediumGreen: '#009933',
         lightGreen: '#66CC66',
       },
       backgroundImage: {

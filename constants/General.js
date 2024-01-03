@@ -552,15 +552,15 @@ export default {
             summary: 'Start your journey to making a positive impact on the planet. By creating a community on Footprint, you are joining a network of changemakers dedicated to driving sustainable change and inspiring others to take climate action.',
             text: 'Create Community Now',
             color: '',
-            link: './createCommunity',
+            link: './createProject',
         },
         {
             id: 2,
             title: 'Start Your Community Journey on Footprint',
             summary: 'Explore the communities today and find your tribe of eco-conscious individuals dedicated to creating a more sustainable and resilient future for all. Join Footprint and be part of the movement for positive change.',
-            text: 'Explore Communities',
+            text: 'Explore Projects',
             color: '',
-            link: './explore',
+            link: './projects',
         },
         {
             id: 3,
