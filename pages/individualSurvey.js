@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-const individualSurvey = () => {
-  const router = useRouter();
 
-  return (
-    <div>businessSurvey</div>
-  )
-}
+  export default function individualSurvey() {
+    const router = useRouter();
 
-export default businessSurvey
+    return (
+      <div>businessSurvey</div>
+    )
+  }
