@@ -1,7 +1,7 @@
 import Sidebar from "./Sidebar";
 import Activities from "./Activities"
 import General from "../constants/General";
-import { firestore } from "../utils/firebase";
+import { firestore } from "../firebase";
 import { doc, getDoc } from "firebase/firestore";
 import React, { useState, useContext, useEffect } from 'react'
 import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
