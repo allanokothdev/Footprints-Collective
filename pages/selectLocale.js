@@ -91,7 +91,7 @@ const selectLocale = () => {
 
                     <div className="mt-5 text-right md:space-x-3 md:block flex flex-col-reverse">
 
-                      <button className="mb-2 md:mb-0 bg-darkGreen px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-middleGreen">
+                      <button onClick={() => router.push('/individualSurvey')} className="mb-2 md:mb-0 bg-darkGreen px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-middleGreen">
                         Next
                       </button>
                     </div>

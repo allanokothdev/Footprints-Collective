@@ -34,14 +34,14 @@ export default function CreateCommunity() {
   return (
     <BaseLayout>
       <Head>
-        <title>Create Community</title>
+        <title>Create Project</title>
         <meta name="description" content="Offsets History" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div>
 
         <div className='flex justify-between items-center px-3 h-16 border-b border-solid'>
-          <h1 className="font-semibold text-xl">Create Community</h1>
+          <h1 className="font-semibold text-xl">Create Project</h1>
           <button onClick={() => router.back()} className="inline-flex items-center w-full px-6 py-3 text-sm font-bold leading-4 text-white bg-darkGreen md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-mediumGreen focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-darkGreen" type="button">Cancel</button>
         </div>
 
@@ -65,7 +65,7 @@ export default function CreateCommunity() {
                         </div>
                         <label className="cursor-pointer ">
                           <span className="focus:outline-none text-white text py-4 px-6 rounded-full bg-darkGreen hover:bg-middleGreen hover:shadow-lg">
-                            Upload Community Profile Picture
+                            Upload Project Profile Picture
                           </span>
                           <input type="file" className="hidden" accept="image/*" onChange={onChange} />
                         </label>
@@ -73,7 +73,7 @@ export default function CreateCommunity() {
                     </div>
 
                     <div className="mb-3 space-y-2 w-full text-xs">
-                      <label className="font-semibold text-gray-600 py-2"> Community Title <abbr title="required">*</abbr>
+                      <label className="font-semibold text-gray-600 py-2"> Project Title <abbr title="required">*</abbr>
                       </label>
                       <input
                         placeholder="Enter Community Title"
@@ -89,36 +89,18 @@ export default function CreateCommunity() {
                       </p>
                     </div>
 
-                    <div className="w-full flex flex-col mb-3 text-xs">
-                      <label className="font-semibold text-gray-600 py-2">  Select Community Purpose <abbr title="required">*</abbr></label>
-                      <select className="block w-full bg-white text-grey-darker border border-grey-lighter rounded-lg h-14 px-4 md:w-full " required="required" name="type" id="type" onChange={e => updateFormInput({ ...formInput, type: e.target.value })}>
-                        <option value="community">Climate Action Activities</option>
-                        <option value="marketplace">Marketplace (Selling Sustainable products or services)</option>
-                      </select>
-                      <p className="text-sm text-red-500 hidden mt-3" id="error">Please fill out this field.</p>
-                    </div>
 
                     <div className="w-full flex flex-col mb-3 text-xs">
-                      <label className="font-semibold text-gray-600 py-2">  Select Community Category <abbr title="required">*</abbr></label>
+                      <label className="font-semibold text-gray-600 py-2">  Select Project Category <abbr title="required">*</abbr></label>
                       <select className="block w-full bg-white text-grey-darker border border-grey-lighter rounded-lg h-14 px-4 md:w-full " required="required" name="category" id="category" onChange={e => updateFormInput({ ...formInput, category: e.target.value })}>
-                        <option value="bootcamp">Bootcamp</option>
-                        <option value="competition">Competition</option>
-                        <option value="conference">Conference</option>
-                        <option value="course">Course</option>
-                        <option value="exchange">Exchange Program</option>
-                        <option value="fellowship">Fellowship</option>
-                        <option value="graduate">Grad School</option>
-                        <option value="high">High School</option>
-                        <option value="internship">Internship</option>
-                        <option value="masters">Masters</option>
-                        <option value="undergraduate">Undergraduate</option>
-                        <option value="primary">Primary School</option>
+                        <option value="bootcamp">Reforestation</option>
+                        <option value="competition">Recycling</option>
                       </select>
                       <p className="text-sm text-red-500 hidden mt-3" id="error">Please fill out this field.</p>
                     </div>
 
                     <div className="w-full flex flex-col mb-3 text-xs">
-                      <label className="font-semibold text-gray-600 py-2">  Select Community Location <abbr title="required">*</abbr></label>
+                      <label className="font-semibold text-gray-600 py-2">  Select Project Location <abbr title="required">*</abbr></label>
                       <select className="block w-full bg-white text-grey-darker border border-grey-lighter rounded-lg h-14 px-4 md:w-full " required="required" name="location" id="location" onChange={e => updateFormInput({ ...formInput, location: e.target.value })}>
                         <option value="Belgium">Belgium</option>
                         <option value="Canada">Canada</option>
@@ -145,7 +127,7 @@ export default function CreateCommunity() {
 
                     <div className="flex-auto w-full mb-1 text-xs space-y-2">
                       <label className="font-semibold text-gray-600 py-2">
-                        Community Description <abbr title="required">*</abbr>
+                        Project Description <abbr title="required">*</abbr>
                       </label>
 
                       <textarea

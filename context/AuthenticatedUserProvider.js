@@ -4,7 +4,7 @@ import {
     onAuthStateChanged,
     GoogleAuthProvider,
 } from "firebase/auth";
-import { auth } from '../utils/firebase'
+import { auth } from '../firebase'
 import { useRouter } from 'next/router'
 
 export const AuthenticatedUserContext = createContext({});
