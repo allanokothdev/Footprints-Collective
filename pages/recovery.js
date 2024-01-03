@@ -3,7 +3,7 @@ import General from '../constants/General'
 import Link from 'next/link'
 
 import { sendPasswordResetEmail } from 'firebase/auth';
-import { auth } from '../utils/firebase.js';
+import { auth } from '../firebase';
 import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

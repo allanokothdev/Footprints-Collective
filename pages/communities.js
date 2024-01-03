@@ -3,7 +3,7 @@ import Link from "next/link";
 import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import Head from "next/head";
-import { firestore } from '../utils/firebase.js';
+import { firestore } from '../firebase';
 import { useRouter } from 'next/router';
 import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
 import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';

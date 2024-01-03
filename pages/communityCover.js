@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import Forest from '../public/forest.jpg';
+import { firestore } from '../firebase';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';

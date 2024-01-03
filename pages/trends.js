@@ -6,7 +6,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
 import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 import Databases from "../constants/Databases";
-import { firestore } from "../utils/firebase";
+import { firestore } from '../firebase';
 
 export default function Trends() {
   const router = useRouter();

@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import Head from 'next/head';
-import { firestore } from '../utils/firebase.js';
+import { firestore } from '../firebase';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';

@@ -3,6 +3,7 @@ import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import Head from "next/head";
 import { useRouter } from 'next/router';
+import { firestore } from '../firebase';
 
 export default function Dashboard() {
   const router = useRouter();

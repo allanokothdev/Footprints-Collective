@@ -3,7 +3,7 @@ import General from '../constants/General'
 import Link from 'next/link'
 
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence } from 'firebase/auth';
-import { auth, firestore } from '../utils/firebase.js';
+import { auth, firestore } from '../firebase';
 import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

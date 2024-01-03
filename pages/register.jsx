@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
-import { auth, firestore } from '../utils/firebase.js';
+import { auth, firestore } from '../firebase';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { doc, setDoc } from 'firebase/firestore';

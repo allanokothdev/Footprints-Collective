@@ -3,7 +3,7 @@ import BaseLayout from "@/components/BaseLayout";
 import General from '../constants/General';
 import { useRouter } from "next/router";
 import Head from "next/head";
-import { firestore } from '../utils/firebase.js';
+import { firestore } from '../firebase';
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 import Databases from '../constants/Databases';
 

@@ -5,6 +5,7 @@ import General from '../constants/General';
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { AuthenticatedUserContext } from '../context/AuthenticatedUserProvider';
+import { firestore } from '../firebase';
 import { collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore';
 
 
