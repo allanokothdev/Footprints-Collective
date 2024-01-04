@@ -32,7 +32,7 @@ export function Hero() {
           At our digital carbon marketplace, we champion the power of small-scale initiatives in combating climate change. Our platform connects conscientious individuals and businesses with local, sustainable projects, offering a direct path to offset carbon footprints. By supporting these initiatives, you not only contribute to a cleaner environment but also empower communities and foster a brighter, greener future for generations to come
         </p>
         <div className="mt-10 flex justify-center gap-x-6">
-          <Button href="/register">Create Community today</Button>
+          <Button href="/register">Create Project today</Button>
           <Button href="/calculate" className="text-white" color="green">Calculate your Footprint</Button>
         </div>
         <div className="mt-36 lg:mt-44">
