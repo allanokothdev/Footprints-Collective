@@ -121,7 +121,7 @@ export default {
         },
     ],
 
-    categories: ["Recycling", 'Upcycling', 'Electric Vehicles','Waste Management', 'Solar', 'Wind Energy', 'Smart Lighting', 'Repair', 'Hybrid Cars', 'Vegetarian Dishes', 'Carbon Capture', 'Reforestation', 'Smart Access Management', 'Clean Energy', 'Community Water Systems', 'Carbon Credits'],
+    categories: ["Regeneration","Recycling", 'Upcycling', 'Electric Vehicles','Waste Management', 'Solar', 'Wind Energy', 'Smart Lighting', 'Repair', 'Hybrid Cars', 'Vegetarian Dishes', 'Carbon Capture', 'Reforestation', 'Smart Access Management', 'Clean Energy', 'Community Water Systems', 'Carbon Credits'],
 
     activities: [
         { 
