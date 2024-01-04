@@ -29,7 +29,7 @@ const BaseLayout = ({ children }) => {
                 <div className="flex flex-row justify-between w-full sticky top-0 bg-white p-3 border-b-2 z-10 items-center">
                     <div>
                         <h1 className="text-black-300 text-xl font-bold">Hi {user?.title}, Welcome to Footprints Collective</h1>
-                        <h2 className="mt-3/4 font-normal">Empowering Sustainable LIfestyles</h2>
+                        <h2 className="mt-3/4 font-normal">Empower Sustainability: Small Projects, Big Climate Impact.</h2>
                     </div>
                     <div className="flex rounded-full bg-darkGreen pr-5 h-10 items-center border border-darkGreen">
                         <img className="rounded-full bg-white float-left h-10 w-10 bg-contain" src={user?.pic}/>
