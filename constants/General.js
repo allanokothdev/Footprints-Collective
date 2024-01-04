@@ -470,7 +470,7 @@ export default {
         { 
             id: 1,
             pic: 'https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-            title: 'The Majestic and Wonderful Bahamas',
+            title: 'Ol Kalou Wetlands Regeneration ',
             summary: 'The best kept secret of The Bahamas is the country sheer size and diversity.With 16 major islands, The Bahamas is an unmatched destination',
             admin: 'allanokothdev.near',
             category: 'Recycling',
@@ -486,7 +486,7 @@ export default {
         {
             id: 2,
             pic: 'https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-            title: 'The Majestic and Wonderful Bahamas',
+            title: 'Ol Kalou Wetlands Regeneration ',
             summary: 'The best kept secret of The Bahamas is the country sheer size and diversity.With 16 major islands, The Bahamas is an unmatched destination',
             admin: 'allanokothdev.near',
             category: 'Recycling',
@@ -501,7 +501,7 @@ export default {
         {
             id: 3,
             pic: 'https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-            title: 'The Majestic and Wonderful Bahamas',
+            title: 'Ol Kalou Wetlands Regeneration ',
             summary: 'The best kept secret of The Bahamas is the country sheer size and diversity.With 16 major islands, The Bahamas is an unmatched destination',
             admin: 'allanokothdev.near',
             category: 'Recycling',
@@ -516,7 +516,7 @@ export default {
         {
             id: 4,
             pic: 'https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-            title: 'The Majestic and Wonderful Bahamas',
+            title: 'Ol Kalou Wetlands Regeneration ',
             summary: 'The best kept secret of The Bahamas is the country sheer size and diversity.With 16 major islands, The Bahamas is an unmatched destination',
             admin: 'allanokothdev.near',
             category: 'Recycling',
@@ -531,7 +531,7 @@ export default {
         {
             id: 5,
             pic: 'https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-            title: 'The Majestic and Wonderful Bahamas',
+            title: 'Ol Kalou Wetlands Regeneration ',
             summary: 'The best kept secret of The Bahamas is the country sheer size and diversity.With 16 major islands, The Bahamas is an unmatched destination',
             admin: 'allanokothdev.near',
             category: 'Recycling',
@@ -548,16 +548,16 @@ export default {
     onboarding: [
         { 
             id: 1,
-            title: 'Join Footprint and Create Your Community Today', 
-            summary: 'Start your journey to making a positive impact on the planet. By creating a community on Footprint, you are joining a network of changemakers dedicated to driving sustainable change and inspiring others to take climate action.',
-            text: 'Create Community Now',
+            title: 'Join Footprint and List Your Project Today', 
+            summary: 'Start your journey to making a positive impact on the planet. By listing a project on Footprint, you are joining a network of changemakers dedicated to driving sustainable change and inspiring others to take climate action.',
+            text: 'Create Project Now',
             color: '',
             link: './createProject',
         },
         {
             id: 2,
-            title: 'Start Your Community Journey on Footprint',
-            summary: 'Explore the communities today and find your tribe of eco-conscious individuals dedicated to creating a more sustainable and resilient future for all. Join Footprint and be part of the movement for positive change.',
+            title: 'Buy Carbon Credits from Verified Projects on Footprint',
+            summary: 'Get verified carbon credits from trusted projects at Footprint. It is an easy way to help the environment by buying these special credits.When you purchase, you are supporting projects that do good for the planet. Make a real difference with each credit you buy',
             text: 'Explore Projects',
             color: '',
             link: './projects',
