@@ -532,7 +532,7 @@ export default {
             id: 5,
             pic: 'https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
             title: 'Ol Kalou Wetlands Regeneration ',
-            summary: 'The best kept secret of The Bahamas is the country sheer size and diversity.With 16 major islands, The Bahamas is an unmatched destination',
+            summary: 'Restoring Vital Ecosystems through Footprints Collectives Environmental Project.Join us in revitalizing the Ol Kalou wetlands, promoting biodiversity, and safeguarding a crucial natural habitat',
             admin: 'allanokothdev.near',
             category: 'Recycling',
             type: 'Community',
