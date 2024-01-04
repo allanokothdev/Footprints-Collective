@@ -481,7 +481,7 @@ export default {
             members: '3 acres',
             totalActivities: 4,
             auditedActivities: 5,
-            tags: ['Regeneration'],
+            tags: ['Regeneration',"Carbon Credits"],
         },
         {
             id: 2,
@@ -496,7 +496,7 @@ export default {
             members: '3 acres',
             totalActivities: 4,
             auditedActivities: 5,
-            tags: ['Regeneration', 'Upcycling'],
+            tags: ['Regeneration', 'Upcycling',"Carbon Credits"],
         },
         {
             id: 3,
@@ -511,7 +511,7 @@ export default {
             members: '3 acres',
             totalActivities: 4,
             auditedActivities: 5,
-            tags: ['Recycling', 'Regeneration'],
+            tags: ['Recycling', 'Regeneration',"Carbon Credits"],
         },
         {
             id: 4,
@@ -526,7 +526,7 @@ export default {
             members: '3 acres',
             totalActivities: 4,
             auditedActivities: 5,
-            tags: ['Recycling', 'Regeneration'],
+            tags: ['Recycling', 'Regeneration', "Carbon Credits"],
         },
         {
             id: 5,
@@ -541,7 +541,7 @@ export default {
             members: '3 acres',
             totalActivities: 4,
             auditedActivities: 5,
-            tags: ['Recycling', 'Upcycling'],
+            tags: ['Recycling', 'Upcycling',"Carbon Credits"],
         },
     ],
 
