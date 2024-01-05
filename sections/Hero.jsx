@@ -32,8 +32,8 @@ export function Hero() {
           Empowering grassroots initiatives, our platform democratizes climate finance, empowering small clean projects with access to essential funding and market visibility. Join us in fostering sustainability, one small step at a time
         </p>
         <div className="mt-10 flex justify-center gap-x-6">
-          <Button href="/register">Create Project today</Button>
-          <Button href="/calculate" className="text-white" color="green">Calculate your Footprint</Button>
+          <Button href="/register">List your Project today</Button>
+          <Button href="/calculate" className="text-white" color="green">Offset your Carbon Footprint</Button>
         </div>
         <div className="mt-36 lg:mt-44">
           <p className="font-display text-base text-slate-900">
