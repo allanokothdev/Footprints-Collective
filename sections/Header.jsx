@@ -9,7 +9,6 @@ import { Logo } from '@/sections/Logo'
 import { NavLink } from '@/sections/NavLink'
 import { SignLink } from '@/sections/SignLink'
 import General from '../constants/General';
-import Image from 'next/image'
 
 function MobileNavLink({ href, children }) {
   return (
@@ -97,7 +96,6 @@ export function Header() {
     <header className="py-8 bg-white">
       <nav className="relative z-50 flex justify-between mx-7">
         <div className="flex items-center md:gap-x-12">
-        <Image alt='Logo' src={Images}
           <Link href="#" aria-label="Home">
             <span className="p-1 text-xl font-black leading-none text-gray-900 w-auto">{General.APP_NAME}</span>
           </Link>
